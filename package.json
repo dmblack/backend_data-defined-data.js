@@ -1,0 +1,36 @@
+{
+  "name": "backend_data-defined-data",
+  "version": "0.0.1",
+  "description": "Data Defined Data (DDD) is a 'data defined' storage layer to your database.",
+  "main": "index.js",
+  "scripts": {
+    "test": "cross-env NODE_ENV=test jest",
+    "lint": "eslint src/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dmblack/backend_data-defined-data.js.git"
+  },
+  "keywords": [
+    "storage",
+    "data",
+    "database",
+    "interface",
+    "layer"
+  ],
+  "author": "Dustyn Blackmore <dustyn@remexchange.net>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/dmblack/backend_data-defined-data.js/issues"
+  },
+  "homepage": "https://github.com/dmblack/backend_data-defined-data.js#readme",
+  "dependencies": {
+    "bcrypt": "^1.0.3",
+    "moment": "^2.21.0",
+    "pg": "^7.4.1"
+  },
+  "devDependencies": {
+    "eslint": "^4.18.2",
+    "jest": "^23.0.0-alpha.0"
+  }
+}
