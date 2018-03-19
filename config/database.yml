@@ -1,0 +1,15 @@
+development:
+  adapter: postgresql
+  encoding: unicode
+  database: development_ddd
+  pool: 5
+  username: development_ddd
+  password: ()m-vD!-[tG-F4)
+
+test:
+  adapter: postgresql
+  encoding: unicode
+  database: test_ddd
+  pool: 5
+  username: test_ddd
+  password: ()m-vD!-[tG-F4)

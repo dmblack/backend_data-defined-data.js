@@ -2,15 +2,15 @@ var path = require('path');
 
 module.exports = {
   test: {
-    client: 'postgresql',
+    client: 'testddd',
     debug: false,
     connection: {
       // socketPath: '/var/run/mysqld/mysqld.sock',
       host: '127.0.0.1',
       port: '5432',
-      user: 'datawarehouse',
+      user: 'test_ddd',
       password: '()m-vD!-[tG-F4)',
-      database: 'datawarehouse'
+      database: 'test_ddd'
     },
     pool: {
       min: 0,
@@ -30,9 +30,9 @@ module.exports = {
       // socketPath: '/var/run/mysqld/mysqld.sock',
       host: '127.0.0.1',
       port: '5432',
-      user: 'datawarehouse',
+      user: 'development_ddd',
       password: '()m-vD!-[tG-F4)',
-      database: 'datawarehouse'
+      database: 'development_ddd'
     },
     pool: {
       min: 0,
@@ -52,9 +52,9 @@ module.exports = {
       // socketPath: '/var/run/mysqld/mysqld.sock',
       host: '127.0.0.1',
       port: '5432',
-      user: 'datawarehouse',
+      user: 'production_ddd',
       password: '()m-vD!-[tG-F4)',
-      database: 'datawarehouse'
+      database: 'production_ddd'
     },
     pool: {
       min: 0,
