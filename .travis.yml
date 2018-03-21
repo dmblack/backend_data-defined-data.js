@@ -3,6 +3,7 @@ services:
 
 before_install:
   - psql -c 'create database test_ddd;' -U postgres
+  - psql -c 'alter user test_ddd with encrypted password "()m-vD!-[tG-F4)"'
   - psql -c 'grant all privileges on database test_ddd to test_ddd'
 
 language: node_js

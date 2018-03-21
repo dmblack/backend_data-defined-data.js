@@ -2,10 +2,9 @@ var path = require('path');
 
 module.exports = {
   test: {
-    client: 'testddd',
-    debug: false,
+    client: 'postgresql',
+    debug: true,
     connection: {
-      // socketPath: '/var/run/mysqld/mysqld.sock',
       host: '127.0.0.1',
       port: '5432',
       user: 'test_ddd',
@@ -27,7 +26,6 @@ module.exports = {
     client: 'postgresql',
     debug: true,
     connection: {
-      // socketPath: '/var/run/mysqld/mysqld.sock',
       host: '127.0.0.1',
       port: '5432',
       user: 'development_ddd',
@@ -49,7 +47,6 @@ module.exports = {
     client: 'postgresql',
     debug: false,
     connection: {
-      // socketPath: '/var/run/mysqld/mysqld.sock',
       host: '127.0.0.1',
       port: '5432',
       user: 'production_ddd',
