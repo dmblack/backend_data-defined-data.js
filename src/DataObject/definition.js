@@ -1,10 +1,10 @@
 // let models = require('./../db/models/models.js');
 
-const definition = (state) => ({
+const definition = (state, model) => ({
   definition: {
     hasDefinition: false,
     definition: null,
-    model: state.models.definition
+    model
   },
   /**
    * Assigns a DataWarehouse definition to an object.

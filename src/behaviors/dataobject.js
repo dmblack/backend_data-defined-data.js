@@ -1,4 +1,4 @@
-import DataObject from './DataObject';
+import DataObject from './../DataObject';
 
 module.exports = DataObject;
 

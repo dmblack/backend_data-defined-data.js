@@ -4,7 +4,7 @@
  * Provides a loadable behavior to the object.
  * @param {any} state
  */
-const loadable = (state) => ({
+const loadable = (state, model) => ({
   loadable: {
     loaded: false
   },
@@ -19,7 +19,7 @@ const loadable = (state) => ({
     if (typeof id !== 'number') { return false; }
     return new Promise(function (resolve, reject) {
       // Fill Instance information
-      state.models.instance.readWhereIDEq(parseInt(id))
+      model.readWhereIDEq(parseInt(id))
         .then(function (result) {
           Object.assign(state.instance, result);
 
