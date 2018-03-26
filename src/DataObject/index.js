@@ -1,9 +1,9 @@
-let attribute = require('./attribute.js');
-let definition = require('./definition.js');
-let instance = require('./instance.js');
+let models = require('./../db/models/');
+let attribute = require('./attribute.js')(models.attribute);
+let definition = require('./definition.js')(models.definition);
+let instance = require('./instance.js')(models.instance)(models.helpers)(models.definition);
 let load = require('./load.js');
 let save = require('./save.js');
-let models = require('./../db/models/')
 
 let DataObject = (state) => {
   if (typeof state === 'undefined' || state ==='') {
@@ -15,11 +15,12 @@ let DataObject = (state) => {
       relationships: []
     };
   }
+
   return Object.assign(
     {},
-    attribute(state, models.attribute),
-    definition(state, models.definition),
-    instance(state, models.instance, models.helpers, models.definition),
+    attribute(state),
+    definition(state),
+    instance(state),
     // load(state, model.instance),
     // save(state)
   );

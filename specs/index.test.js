@@ -19,3 +19,14 @@ it('Returns a record with content (seed)', async () => {
   const getOne = await instance.get(parseInt(1));
   expect(getOne.instance.id).toEqual(1);
 });
+
+it("Conforms to a data object standard", async () => {
+  expect.assertions(5);
+  const getOne = await instance.get(parseInt(1));
+  console.log(JSON.stringify(getOne));
+  expect(getOne).toHaveProperty('attributes');
+  expect(getOne).toHaveProperty('attributesHistory');
+  expect(getOne).toHaveProperty('definition');
+  expect(getOne).toHaveProperty('instance');
+  expect(getOne).toHaveProperty('relationships');
+})

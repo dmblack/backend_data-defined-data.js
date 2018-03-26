@@ -1,6 +1,6 @@
 // let models = require('./../db/models/models.js');
 
-const instance = (state, model, helpers, definition) => ({
+const instance = (model) => (helpers) => (definition) => (state) => ({
   definition: () => {
     return state.models.definition.describe();
   },
@@ -42,8 +42,8 @@ const instance = (state, model, helpers, definition) => ({
           // Perform the hard yards.
           Promise.all([attributesHistoryPromise, attributesPromise, definitionPromise])
             .then((resolved) => {
-              resolved[0].forEach((attributesHistory) => { state.attributesHistory.push(attributesHistory); });
-              resolved[1].forEach((attribute) => { state.attributes.push(attribute); });
+              resolved[0].forEach((attributesHistory) => { state.attributesHistory.push({attributesHistory}); });
+              resolved[1].forEach((attribute) => { state.attributes.push({attribute: attribute}); });
               Object.assign(state.definition, resolved[2]);
               resolve(state);
             })
