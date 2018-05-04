@@ -1,11 +1,10 @@
-let models = require('./../db/models/');
-let attribute = require('./attribute.js')(models.attribute);
-let definition = require('./definition.js')(models.definition);
-let instance = require('./instance.js')(models.instance)(models.helpers)(models.definition);
-let load = require('./load.js');
-let save = require('./save.js');
+const attribute = require('./attribute.js');
+const definition = require('./definition.js');
+const instance = require('./instance.js');
 
-let DataObject = (state) => {
+const stateable = require('./state.js');
+
+const DataObject = (refs) => (state) => {
   if (typeof state === 'undefined' || state ==='') {
     state = {
       instance: {},
@@ -20,9 +19,7 @@ let DataObject = (state) => {
     {},
     attribute(state),
     definition(state),
-    instance(state),
-    // load(state, model.instance),
-    // save(state)
+    instance(state)
   );
 }
 

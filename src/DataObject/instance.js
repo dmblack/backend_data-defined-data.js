@@ -1,9 +1,6 @@
 // let models = require('./../db/models/models.js');
 
-const instance = (model) => (helpers) => (definition) => (state) => ({
-  definition: () => {
-    return state.models.definition.describe();
-  },
+const instance = (state) => ({
   get: function load(id) {
     if (typeof id !== 'number') { return false; }
     return new Promise(function (resolve, reject) {

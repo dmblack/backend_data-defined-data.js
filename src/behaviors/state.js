@@ -3,11 +3,7 @@
  *  {array} stateable.history stores historical changes.
  * @param {any} state 
  */
-const stateable = (state) => ({
-  stateable: {
-    history: []
-  },
-
+const stateable = (state) => (Object.assign({}, {
   /**
    * Get current property value
    * @param {string} property 
@@ -34,12 +30,11 @@ const stateable = (state) => ({
    */
   reset: function reset (history) {
     if (typeof history === 'undefined') {
-      return Object.assign(state, stateable.history[0]);
+      return Object.assign({}, state, stateable.history[0]);
     } else {
-      return Object.assign(state, stateable.history[parseInt(history)]);
+      return Object.assign({}, state, stateable.history[parseInt(history)]);
     }
   },
-
   /**
    * Set property to value
    *  Additionally; saves original state before changes to history.
@@ -51,10 +46,10 @@ const stateable = (state) => ({
     stateable.history.push(state);
 
     state[property] = value;
-    return state[property];
+    return state;
   }
-});
+}));
 
-module.exports = {
-  stateable: stateable
-};
+module.exports = stateable;
+
+export default stateable;

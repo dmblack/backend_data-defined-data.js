@@ -1,6 +1,6 @@
 // let models = require('./../db/models/models.js');
 
-const definition = (model) => (state) => ({
+const definition = (state) => ({
   definition: {
     hasDefinition: false,
     definition: null,
