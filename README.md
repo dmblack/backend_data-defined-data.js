@@ -34,10 +34,24 @@ You can use [npm](https://npmjs.org/) or [yarn](https://yarnpkg.com):
     $ npm install backend_data-defined-data.js
     $ yarn add backend_data-defined-data.js
 
-
 ## Usage
 
-TBC
+### Configuration
+
+Create your database, and users, within postgres;
+```$ sudo -u postgres createuser development_ddd```
+```$ sudo -u postgres createuser test_ddd```
+```$ sudo -u postgres createdb development_ddd```
+```$ sudo -u postgres createdb test_ddd```
+
+Then grant appropriate privileges;
+```$ sudo -u postgres psql```
+```# grant all privileges on database test_ddd to test_ddd;```
+```# grant all privileges on database development_ddd to development_ddd;```
+```# \q```
+
+
+More To Come
 
 ## FAQ
 (Mostly asked by myself, to myself)
