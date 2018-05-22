@@ -44,12 +44,15 @@ Create your database, and users, within postgres;
 ```$ sudo -u postgres createdb development_ddd```
 ```$ sudo -u postgres createdb test_ddd```
 
-Then grant appropriate privileges;
+Then set passwords, and grant appropriate privileges;
 ```$ sudo -u postgres psql```
+```# alter user test_ddd with encrypted password '()m-vD!-[tG-F4)';```
+```# alter user development_ddd with encrypted password '()m-vD!-[tG-F4)';```
 ```# grant all privileges on database test_ddd to test_ddd;```
 ```# grant all privileges on database development_ddd to development_ddd;```
 ```# \q```
 
+Important: Obviously; you should not expose dev and test to the wild.
 
 More To Come
 
